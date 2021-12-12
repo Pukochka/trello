@@ -1,198 +1,147 @@
-
-    let item = document.querySelector('.trello-item'),
-    addItem = document.querySelector('#addItem'),
-    conteiner = document.querySelector('.trello-track'),
-    soc = item.innerHTML,
-    arrayChecked = [];
-
-addItem.addEventListener('click', addForm);
-function addForm(){
-    let incont = document.createElement('div');
-    incont.className = 'trello-item';
-    incont.innerHTML = `${soc}`;
-    conteiner.insertBefore(incont,addItem);
-    del();
-    openmenu();
-    addButton();
-    removeBtn();
-    valueParams();
-    BtnAct();
-    innerArr();
-}
-
-function del(){
-    let deleteitem = document.querySelectorAll('.trello-cross');
     
-    for(let i = 0; i < deleteitem.length ; i++){
-        let item = document.querySelectorAll('.trello-item');
-        deleteitem[i].addEventListener('click', function(){
-                conteiner.removeChild(item[i],addItem);
-        });
+    // const beforeAdd = document.querySelector('#addItem');
+    // beforeAdd.addEventListener('click',addNewItem);
+
+    const items1 = document.querySelector('.trello-item');
+    const itemHTML = items1.innerHTML;
+    const addCheck = document.querySelectorAll('.checked');
+    const btnMains = document.querySelectorAll('.open-selectBtn');
+    const removeBtn = document.querySelectorAll('.open-span');
+    const menuBtn = document.querySelectorAll('.open');
+    const addBtn = document.querySelectorAll('#more');
+
+    function _init(){
+        valueInputs();
+        deleteItem();
+        openMenu();
+        closeMenu();
+        addMenuBtn(addBtn,menuBtn);
+        closeMenuBtn(menuBtn,removeBtn);
+        
+        addInArr(addCheck,btnMains)
     }
-}
 
-
-
-
-function openmenu(){
-    let menu = document.querySelectorAll('.trello-menu');
-    for(let i = 0; i < menu.length ; i++){
-        menu[i].addEventListener('click', function(){
+    function addNewItem(){
+        const parentItem = items1.parentNode;
+        const addItem = document.createElement('div');
+        addItem.className = 'trello-item';
+        addItem.innerHTML = itemHTML;
+        parentItem.insertBefore(addItem,beforeAdd);
+        _init();
+    };
+    
+    function valueInputs() {
+        let mainInp = document.querySelectorAll('.trello-input'),
+            changeValue = document.querySelectorAll('.open-ul-input'),
+            change = document.querySelectorAll('.open-ul-label'),
+            mainLab = document.querySelectorAll('.trello-label');
             
-            modal.classList.add('active');
-        });
-    }
-}
-
-
-
-let modal = document.querySelector('.modal');
-let modalspan = document.querySelector('.modal-span');
-
-
-modalspan.addEventListener('click',function(){
-
-    modal.classList.remove('active');
-});
-
-
-
-let addBtn = document.querySelector('#addBtn');
-
-
-
-function addButton(){
-    let btn = document.querySelectorAll('.trello-add');
-    for(let i = 0; i < btn.length ; i++){
-        btn[i].addEventListener('click', function(){
-            let openBtn = document.querySelectorAll('.open');
-            openBtn[i].classList.add('active');
-        });
-    }
-}
-function removeBtn(){
-    let removeBtn = document.querySelectorAll('.open-span');
-    for(let i = 0; i < removeBtn.length ; i++){
-        removeBtn[i].addEventListener('click', function(){
-            let open = document.querySelectorAll('.open');
-            open[i].classList.remove('active');
-        });
-    }
-}
-removeBtn();
-addButton();
-del();
-openmenu();
-innerValue();
-BtnAct();
-innerArr();
-
-
-
-
-
-function valueParams() {
-    let mainInp = document.querySelectorAll('.trello-input'),
-        changeValue = document.querySelectorAll('.open-ul-input'),
-        change = document.querySelectorAll('.open-ul-label'),
-        mainLab = document.querySelectorAll('.trello-label');
-        
-        for(let i = 0; i < changeValue.length ; i++){
-            change[i].innerHTML = changeValue[i].value;
-        }
-        
-        for(let i = 0; i < mainLab.length ; i++){
-            mainLab[i].innerHTML = mainInp[i].value;
-        }
-}
-
-
-
-
-function innerArr(){
-    let selectInpt = document.querySelectorAll('.open-ul-input');
-    
-    for(let i = 0; i < selectInpt.length ; i++){
-        
-        selectInpt[i].addEventListener('change', function(){
-
-            if ( this.checked ) {
-                console.log(arrayChecked);  
-                arrayChecked.push(selectInpt[i].value);
-                
-            } else {
-
-                cleanArr();
-
+            for(let i = 0; i < changeValue.length ; i++){
+                change[i].innerHTML = changeValue[i].value;
             }
+            
+            for(let i = 0; i < mainLab.length ; i++){
+                mainLab[i].innerHTML = mainInp[i].value;
+            }
+    }
+
+    function deleteItem(){
+        const item = document.querySelectorAll('.trello-item');
+        const cross = document.querySelectorAll('.trello-cross');
+        for (let i = 0; i < item.length;i++){
+            cross[i].addEventListener('click',function(){
+                item[i].remove();
+            });
+        }
+    }
+
+    
+
+    function openMenu(){
+        const menu = document.querySelector('.modal');
+        const menuBtn = document.querySelectorAll('.trello-menu');
+        for (let i = 0; i < menuBtn.length;i++){
+            menuBtn[i].addEventListener('click',function(){
+                menu.classList.add('active');
+            });
+        }
+    }
+
+    function closeMenu(){
+        const menu = document.querySelector('.modal');
+        const cross = document.querySelector('.modal-span');
+        cross.addEventListener('click',function(){
+            menu.classList.remove('active');
         });
-    }   
-} 
+    }
 
+    function addMenuBtn(addBtn,menuBtn){
+        for (let i = 0; i < addBtn.length;i++){
+            addBtn[i].addEventListener('click',function(){
+                menuBtn[i].classList.add('active');
+            });
+        }
+    }
 
-
-
-function innerValue(){
-    let contUl = document.querySelectorAll('.trello-desc');
-    let clip = document.querySelectorAll('#more');
+    function closeMenuBtn(menuBtn,removeBtn){
+        for (let i = 0; i < removeBtn.length;i++){
+            removeBtn[i].addEventListener('click',function(){
+                menuBtn[i].classList.remove('active');
+            });
+        }
+    }
     
-    for(let i = 0; i < arrayChecked.length ; i++){
-        let parent = document.createElement('li');  
-        console.log(arrayChecked[i]);
-        parent.innerHTML = `<label class="label">
-                                <input class="trello-input" type="checkbox" value="${arrayChecked[i]}">
-                                <span class="trello-span"></span>
-                                <span class="trello-label"></span> 
-                            </label>`;
-        for(let i = 0; i < contUl.length ; i++){
-            contUl[i].insertBefore(parent,clip[i]);
+    
+    let arrayCheck = [];
+    function addInArr(btn,btnM){
+        const input = document.querySelectorAll('#input');
+        const conteinerInput = document.querySelectorAll('.open-ul li')
+        
+        for (let i = 0; i < input.length;i++){
+            input[i].addEventListener('change',function(){
+                if(input[i].checked){
+                    arrayCheck.push(i);
+                    console.log(arrayCheck);
+                }else{
+                    arrayCheck.pop(this.value);
+                    console.log(arrayCheck);
+                }
+            });
+            for (let i = 0; i < btnM.length;i++){
+                btnM[i].addEventListener('click',function(){
+                    if(!arrayCheck.length == 0){
+                    
+                        for(let item of arrayCheck){
+                            conteinerInput[item].classList.add('hidden');
+                            addCheck[item].classList.add('active');
+                            menuBtn[i].classList.remove('active');
+                        }
+                        setTimeout(clearArr,100);
+                    
+                    }
+                });
+            }
+            
+        }  
+        
+    }
+
+    
+     
+    function clearArr(){
+        while(arrayCheck.length > 0){
+            arrayCheck.pop();   
         }
         
-
-    }
-       
-    valueParams();  
-    
-}
-function BtnAct() {
-    let selectBtn = document.querySelectorAll('.open-selectBtn');
-    for(let i = 0; i < selectBtn.length ; i++){
-        selectBtn[i].addEventListener('click',manyFunc);
-    }
-}
-
-
-
-function manyFunc() {
-    if(arrayChecked.length == 0){
-
-    }else{
-        innerValue();
-    }
-    console.log(arrayChecked);
-    cleanArr();  
-
-    let open = document.querySelectorAll('.open');
-    let selectInpt = document.querySelectorAll('.open-ul-li input');
-    let openUl = document.querySelectorAll('.open-ul');
-    let openUlLi = document.querySelectorAll('.open-ul li');
-    for(let i = 0; i < open.length ; i++){
-        
-        open[i].classList.remove('active');
-        if( selectInpt.checked){
-            openUl[i].removeChild(openUlLi[i]);
-        }
-        // 
     }
     
-    
-    
-} 
-function cleanArr() {
-    while(arrayChecked.length > 0){
-        arrayChecked.pop();
+    function slider(){
+        const sliderItem = document.querySelector('.trello-item');
+        const scrollWidth = item.offsetWidth;
+
     }
-}
+
+    _init();
 
 
 

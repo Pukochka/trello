@@ -402,7 +402,7 @@ svg {
   left: 0;
   width: 100%;
   height: auto;
-  background-color: #e9e6e6;
+  background-color: #393e46;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 5px #e9e6e6;
           box-shadow: 0 0 5px #e9e6e6;
@@ -415,13 +415,18 @@ svg {
   visibility: hidden;
 }
 
+.open-wrapper {
+  max-width: 87%;
+  margin: 0 auto;
+}
+
 .open-span {
   position: absolute;
   top: 5px;
   right: 5px;
   width: 20px;
   height: 20px;
-  color: #393e46;
+  color: rgba(255, 0, 0, 0.493);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,7 +447,7 @@ svg {
 }
 
 .open-span:hover {
-  color: #222831;
+  color: red;
 }
 
 .open-ul {
@@ -451,14 +456,49 @@ svg {
   padding-top: 20px;
 }
 
+.open-ul-input {
+  display: none;
+}
+
+.open-ul-input:checked + .open-ul-span::after {
+  opacity: 1;
+}
+
+.open-ul-span {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: solid 2px #e9e6e6;
+}
+
+.open-ul-span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #00fff5;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  opacity: 0;
+}
+
 .open-ul-li {
+  position: relative;
   cursor: pointer;
   font-weight: 500;
   margin: 10px 25px 10px;
   padding: 10px;
   font-size: 14px;
   border-radius: 20px;
-  border: solid 2px #393e46;
+  border: solid 2px #e9e6e6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -468,7 +508,7 @@ svg {
   text-transform: uppercase;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  color: #222831;
+  color: #e9e6e6;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -476,8 +516,7 @@ svg {
 }
 
 .open-ul-li:hover {
-  color: #e9e6e6;
-  background-color: #393e46;
+  background-color: #00adb5;
 }
 
 .open-selectBtn {
@@ -504,6 +543,10 @@ svg {
   color: #e9e6e6;
   background-color: #00adb5;
   border-color: #00adb5;
+}
+
+.open-ul li.hidden {
+  display: none;
 }
 
 #addItem {
@@ -575,5 +618,31 @@ svg {
 
 .dot.active::before {
   opacity: 1;
+}
+
+.checked {
+  display: none;
+}
+
+.checked.active {
+  display: inline;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+}
+
+.btn-prev, .btn-next {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
