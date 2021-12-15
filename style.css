@@ -13,11 +13,11 @@ body {
 .main {
   position: relative;
   background-color: #222831;
-  height: 1000px;
+  height: 850px;
 }
 
 .modal {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.247);
@@ -93,7 +93,7 @@ body {
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto;
   padding-left: 10px;
   padding-right: 10px;
@@ -131,32 +131,28 @@ svg {
   background-color: #7fa9da;
 }
 
+.slick-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
 .trello {
   padding-top: 40px;
   overflow: hidden;
 }
 
 .trello-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-  -webkit-transition: .2s ease;
-  transition: .2s ease;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .trello-item {
-  min-width: 32%;
   position: relative;
   background-color: #393e46;
   border-radius: 10px;
-  height: auto;
-  -webkit-transition: .2s ease box-shadow;
-  transition: .2s ease box-shadow;
 }
 
 .trello-item:hover {
@@ -644,5 +640,134 @@ svg {
   background-color: #fff;
   border-radius: 50%;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-prev-before, .btn-next-before {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 500;
+  visibility: hidden;
+}
+
+.trello-inner.next {
+  left: 100%;
+}
+
+.trello-inner.prev {
+  left: -100%;
+}
+
+.btn-next.hidden, .btn-prev.hidden {
+  visibility: hidden;
+}
+
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slick-dots > li {
+  list-style-type: none;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: #929292;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.slick-dots > li > button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: transparent;
+  cursor: pointer;
+}
+
+li.slick-active {
+  background-color: #4d4d4d !important;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.prev1, .next1 {
+  width: 40px;
+  height: 40px;
+  background-color: #393e46;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  cursor: pointer;
+}
+
+.prev1:hover, .next1:hover {
+  background-color: #333333;
+}
+
+.prev1 {
+  left: 38%;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.next1 {
+  left: 59%;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+@media (max-width: 1200px) {
+  .modal-p {
+    padding: 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .modal-p {
+    padding: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .modal-p {
+    padding: 50px;
+  }
+  .trello-plus {
+    display: none;
+  }
 }
 /*# sourceMappingURL=style.css.map */
