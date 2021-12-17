@@ -8,12 +8,13 @@
 
 body {
   font-family: 'Montserrat';
+  overflow-x: hidden;
 }
 
 .main {
   position: relative;
   background-color: #222831;
-  height: 850px;
+  height: auto;
 }
 
 .modal {
@@ -105,6 +106,17 @@ svg {
   margin: 5px;
 }
 
+.dots-conteiner {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .label {
   position: relative;
   display: -webkit-box;
@@ -139,20 +151,77 @@ svg {
           column-gap: 20px;
 }
 
+.trello-img:nth-child(n) {
+  background: -webkit-gradient(linear, left top, right top, from(#6b3779), to(#2589b1));
+  background: linear-gradient(90deg, #6b3779 0%, #2589b1 100%);
+}
+
+.trello-desc li.hidden {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.hide.active {
+  display: inline;
+}
+
 .trello {
   padding-top: 40px;
   overflow: hidden;
 }
 
+.trello-delete {
+  position: absolute;
+  left: 10px;
+  color: #793232;
+  width: 20px;
+  height: 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+  font-size: 30px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trello-delete:hover {
+  color: red;
+}
+
 .trello-track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
+  height: 606px;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   padding-bottom: 60px;
 }
 
 .trello-item {
-  position: relative;
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
+  position: absolute;
   background-color: #393e46;
-  border-radius: 10px;
+  width: 100%;
+  top: 0;
+  height: auto;
+  border-radius: 15px;
 }
 
 .trello-item:hover {
@@ -286,8 +355,6 @@ svg {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  background: -webkit-gradient(linear, left top, right top, from(#c7b3cc), to(#2589b1));
-  background: linear-gradient(90deg, #c7b3cc 0%, #2589b1 100%);
 }
 
 .trello-wrapper {
@@ -582,8 +649,8 @@ svg {
 }
 
 .dot {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: solid 2px #dfdfdf;
   position: relative;
@@ -596,6 +663,7 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  cursor: pointer;
 }
 
 .dot + .dot {
@@ -605,11 +673,13 @@ svg {
 .dot::before {
   content: '';
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 15px;
+  height: 15px;
   background-color: #c4c4c4;
   border-radius: 50%;
   opacity: 0;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
 }
 
 .dot.active::before {
@@ -625,6 +695,7 @@ svg {
 }
 
 .btn {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -690,6 +761,10 @@ svg {
   transition: .3s ease all;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .slick-dots > li > button {
@@ -732,6 +807,10 @@ li.slick-active {
   -webkit-transition: .3s ease all;
   transition: .3s ease all;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .prev1:hover, .next1:hover {

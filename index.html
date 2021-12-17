@@ -21,13 +21,13 @@
         <div class="wrapper">
             <div class="trello">
                 <div class="trello-track">
-                    <div class="trello-item">
+                    <div class="trello-item 1" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -38,58 +38,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -102,32 +111,60 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -139,13 +176,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trello-item">
+                    <div class="trello-item 2" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -156,58 +193,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -220,32 +266,60 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -257,13 +331,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trello-item">
+                    <div class="trello-item 3" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -274,58 +348,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -338,32 +421,60 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -375,13 +486,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trello-item">
+                    <div class="trello-item 4" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -392,58 +503,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -456,32 +576,60 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -493,13 +641,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trello-item">
+                    <div class="trello-item 5" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -510,58 +658,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -574,32 +731,60 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -611,13 +796,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="trello-item">
+                    <div class="trello-item 6" name='item'>
                         <div class="trello-menu">
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                             <div class="trello-menu-dot"></div>
                         </div>
-                        <div class="trello-cross">&times;</div>
+                        <div class="trello-cross" name='cross'>&times;</div>
                         <div class="trello-wrapper">
                             <div class="trello-img"></div>
                             <div class="trello-text">
@@ -628,58 +813,67 @@
                                 <p class="trello-text-p">Приветствую, я робот</p>
                             </div>
                             <ul class="trello-desc">
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="доставка">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li>
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="оплата">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="заказы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
                                 </li>
-                                <li class="checked">
+                                <li class="checked" name='checked'>
                                     <label class="label">
-                                        <input class="trello-input" type="checkbox" value="проверка" >
-                                        <span class="trello-span"></span>
-                                        <span class="trello-label"></span> 
-                                    </label>
-                                </li>
-                                <li class="checked" >
-                                    <label class="label">
-                                        <input class="trello-input" type="checkbox" value="вип">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
                                         <span class="trello-span"></span>
                                         <span class="trello-label"></span> 
                                     </label>
@@ -692,32 +886,370 @@
                                 </li>
                             </ul>
                         </div> 
-                        <div class="open">
+                        <div class="open" name='open'>
                             <span class="open-span">&times;</span>
                             <div class="open-wrapper">
                                 <ul class="open-ul">
-                                    <li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="заказы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="проверка" >
                                             <span class="trello-span"></span>
                                             <span class="trello-label"></span> 
                                         </label>
                                     </li>
-                                    <li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="вип">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <div class="open-selectBtn">выбрать</div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trello-item 7" name='item'>
+                        <div class="trello-menu">
+                            <div class="trello-menu-dot"></div>
+                            <div class="trello-menu-dot"></div>
+                            <div class="trello-menu-dot"></div>
+                        </div>
+                        <div class="trello-cross" name='cross'>&times;</div>
+                        <div class="trello-wrapper">
+                            <div class="trello-img"></div>
+                            <div class="trello-text">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="text-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-text-size fa-w-20 fa-2x">
+                                    <path fill="#e9e6e6" d="M624 32H272a16 16 0 0 0-16 16v72a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V64h144v384h-72a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h176a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8h-72V64h144v56a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V48a16 16 0 0 0-16-16zM304 224H16a16 16 0 0 0-16 16v56a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-40h112v192H88a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h144a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8h-56V256h112v40a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-56a16 16 0 0 0-16-16z" class=""> 
+                                    </path>
+                                </svg>
+                                <p class="trello-text-p">Приветствую, я робот</p>
+                            </div>
+                            <ul class="trello-desc">
+                                <li name='checked'>
+                                    <label class="label">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li id="more">
+                                    <div class="trello-add" id="addBtn">
+                                        <span class="trello-plus"></span>
+                                        добавить кнопку
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                        <div class="open" name='open'>
+                            <span class="open-span">&times;</span>
+                            <div class="open-wrapper">
+                                <ul class="open-ul">
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="заказы" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="проверка" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="вип">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <div class="open-selectBtn">выбрать</div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trello-item 8" name='item'>
+                        <div class="trello-menu">
+                            <div class="trello-menu-dot"></div>
+                            <div class="trello-menu-dot"></div>
+                            <div class="trello-menu-dot"></div>
+                        </div>
+                        <div class="trello-cross" name='cross'>&times;</div>
+                        <div class="trello-wrapper">
+                            <div class="trello-img"></div>
+                            <div class="trello-text">
+                                <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="text-size" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="svg-inline--fa fa-text-size fa-w-20 fa-2x">
+                                    <path fill="#e9e6e6" d="M624 32H272a16 16 0 0 0-16 16v72a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V64h144v384h-72a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h176a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8h-72V64h144v56a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V48a16 16 0 0 0-16-16zM304 224H16a16 16 0 0 0-16 16v56a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-40h112v192H88a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h144a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8h-56V256h112v40a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8v-56a16 16 0 0 0-16-16z" class=""> 
+                                    </path>
+                                </svg>
+                                <p class="trello-text-p">Приветствую, я робот</p>
+                            </div>
+                            <ul class="trello-desc">
+                                <li name='checked'>
+                                    <label class="label">
+                                        
+                                        <input class="trello-input" name="input" type="checkbox" value="доставка">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                        <span class="trello-delete">&times;</span>
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label" >
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="МОИ БОНУСЫ">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="ВОЗВРАТ">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="оплата">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="заказы" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="дополнительные вопросы" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="проверка" >
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li class="checked" name='checked'>
+                                    <label class="label">
+                                        <span class="trello-delete">&times;</span>
+                                        <input class="trello-input" name="input" type="checkbox" value="вип">
+                                        <span class="trello-span"></span>
+                                        <span class="trello-label"></span> 
+                                    </label>
+                                </li>
+                                <li id="more">
+                                    <div class="trello-add" id="addBtn">
+                                        <span class="trello-plus"></span>
+                                        добавить кнопку
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> 
+                        <div class="open" name='open'>
+                            <span class="open-span">&times;</span>
+                            <div class="open-wrapper">
+                                <ul class="open-ul">
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="доставка">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="МОИ БОНУСЫ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="ВОЗВРАТ">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li class="hide" name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="оплата">
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="заказы" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="дополнительные вопросы" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
+                                        <label class="label">
+                                            <input id="input" class="trello-input" type="checkbox" value="проверка" >
+                                            <span class="trello-span"></span>
+                                            <span class="trello-label"></span> 
+                                        </label>
+                                    </li>
+                                    <li name='delete'>
                                         <label class="label">
                                             <input id="input" class="trello-input" type="checkbox" value="вип">
                                             <span class="trello-span"></span>
@@ -730,26 +1262,33 @@
                         </div>
                     </div>
                     
+                    
                     <!-- <div id="addItem">
                         <div class="trello-item-add"></div>
                     </div> -->
                 </div>
-                <!-- <div class="btn">
+                <div class="btn">
                     <div class="btn-prev">
                         <div class="btn-prev-before"></div>
                     </div>
                     <div class="btn-next">
                         <div class="btn-next-before"></div>
                     </div>
-                </div> -->
+                </div>
+                <div class="dots-conteiner">
+                    <!-- <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span> -->
+                </div>
             </div>
             <!-- <div class="dotsbar">
                 <div class="dot active"></div>
             </div> -->
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -13,11 +13,12 @@ $blue:#00adb5;
 }
 body{
     font-family: 'Montserrat';
+    overflow-x: hidden;
 }
 .main{
     position: relative;
     background-color: #222831;
-    height: 850px;
+    height: auto;
 }
 .modal{
     position: fixed;
@@ -79,6 +80,12 @@ svg{
     height: 25px;
     margin: 5px;
 }
+.dots-conteiner{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
 .label{
     position: relative;
     display: flex;
@@ -100,26 +107,51 @@ svg{
     display: flex;
     column-gap: 20px;
 }
-
+.trello-img:nth-child(n){background: linear-gradient(90deg, rgb(107, 55, 121) 0%, hsla(197, 65%, 42%, 1) 100%);}
+.trello-desc li.hidden{
+    display: none;
+}
+.hide{
+    display: none;
+}
+.hide.active{
+    display: inline;
+}
 .trello{
     padding-top: 40px;
     overflow: hidden;
+    &-delete{
+        position: absolute;
+        left: 10px;
+        color: rgb(121, 50, 50);
+        width: 20px;
+        height: 20px;
+        user-select: none;
+        transition: .3s ease all;
+        font-size: 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &:hover{
+            color: red;
+        }
+    }
     &-track{
+        display: flex;
         position: relative;
-        // display: flex;
-        // 
-        // transition: .4s ease all;
-        // padding-left: 20px;
-        // padding-right: 20px;
+        height: 606px;
+        column-gap: 20px;
         padding-bottom: 60px;
     }
     &-item{
-        // min-width: 400px;
-        position: relative;
-        background-color: #393e46;
-        border-radius: 10px;
-        // height: auto;
-        // transition: .2s ease all;
+        transition: .5s ease all;
+        position: absolute;
+        background-color: $gray;
+        width: 100%;
+        top: 0;
+        height: auto;
+        border-radius: 15px;
         &:hover{
             box-shadow: 0 0 12px #393e46;
         }
@@ -215,7 +247,6 @@ svg{
         width: 100%;
         height: 200px;
         border-radius: 10px;
-        background: linear-gradient(90deg, hsla(288, 20%, 75%, 1) 0%, hsla(197, 65%, 42%, 1) 100%);
     }
     &-wrapper{
         max-width: 87%;
@@ -429,25 +460,27 @@ svg{
     z-index: 0;
 }
 .dot{
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     border: solid 2px rgb(223, 223, 223);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     & + &{
         margin-left: 20px;
     }
     &::before{
         content: '';
         position: absolute;
-        width: 30px;
-        height: 30px;
+        width: 15px;
+        height: 15px;
         background-color: rgb(196, 196, 196);
         border-radius: 50%;
         opacity: 0;
+        transition: .3s ease all;
     }
 }
 .dot.active{
@@ -464,6 +497,7 @@ svg{
 }
 
 .btn{
+    margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -513,6 +547,7 @@ svg{
         background-color: rgb(146, 146, 146);  
         transition: .3s ease all;
         transform: scale(0.8); 
+        user-select: none;
              
         & > button{
             width: 30px;
@@ -544,6 +579,7 @@ li.slick-active{
     bottom: 0;
     transition: .3s ease all;
     cursor: pointer;
+    user-select: none;
     &:hover{
         background-color: rgb(51, 51, 51);
     }
