@@ -20,6 +20,15 @@ body{
     background-color: #222831;
     height: auto;
 }
+.water-mark{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 50px;
+    height: 50px;
+    background-color: $gray;
+    z-index: 10 ;
+}
 .modal{
     position: fixed;
     width: 100%;
@@ -148,10 +157,11 @@ svg{
         transition: .5s ease all;
         position: absolute;
         background-color: $gray;
-        width: 100%;
+        width: calc(100vw/3);
         top: 0;
         height: auto;
         border-radius: 15px;
+        margin-left: 20px;
         &:hover{
             box-shadow: 0 0 12px #393e46;
         }
@@ -271,6 +281,9 @@ svg{
     &-desc{
         list-style-type: none;
         padding: 0;
+    }
+    &-cross:first-child{
+        display: none;
     }
     &-cross{
         display: flex;
