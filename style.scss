@@ -116,7 +116,18 @@ svg{
 .hide.active{
     display: inline;
 }
+.item-add{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .trello{
+    position: relative;
     padding-top: 40px;
     overflow: hidden;
     height: 1000px;
@@ -275,7 +286,7 @@ svg{
         transition: all .35s;
     }
     &-cross:first-child{
-        display: none;
+        visibility: hidden;
     }
     &-cross{
         display: flex;
@@ -500,6 +511,7 @@ svg{
     transform: translateY(-36%);
     width: 100%;
     display: flex;
+    z-index: 100;
 }
 .btn-prev,.btn-next{
     display: flex;

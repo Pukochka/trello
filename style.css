@@ -163,7 +163,19 @@ svg {
   display: inline;
 }
 
+.item-add {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .trello {
+  position: relative;
   padding-top: 40px;
   overflow: hidden;
   height: 1000px;
@@ -386,7 +398,7 @@ svg {
 }
 
 .trello-cross:first-child {
-  display: none;
+  visibility: hidden;
 }
 
 .trello-cross {
@@ -694,6 +706,7 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 100;
 }
 
 .btn-prev, .btn-next {
