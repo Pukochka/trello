@@ -4,7 +4,7 @@ $white:rgb(233, 230, 230);
 $black:#222831;
 $gray:#393e46;
 $lightblue:#00adb5;
-$blue:#00adb5;
+$blue:#00fff5;
 
 *{
     margin: 0;
@@ -82,7 +82,7 @@ svg{
 }
 .dots-conteiner{
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 70px;
     display: flex;
     justify-content: center;
 }
@@ -100,7 +100,7 @@ svg{
     cursor: pointer;
     transition: .3s ease background-color;
     &:hover{
-        background-color: rgb(127, 169, 218);
+        background-color: rgb(105, 105, 105);
     }
 }
 .trello-img:nth-child(1){background: linear-gradient(90deg, rgb(107, 55, 121) 0%, hsla(197, 65%, 42%, 1) 100%);}
@@ -117,14 +117,18 @@ svg{
     display: inline;
 }
 .item-add{
-    width: 30px;
-    height: 30px;
     position: absolute;
-    left: 40px;
-    top: 40px;
-    background-color: #fff;
-    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 45px;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding:10px 20px;
+    border: dashed 2px $blue;
+    color: $blue;
     cursor: pointer;
+    border-radius: 20px;
+    user-select: none;
 }
 .trello{
     position: relative;
@@ -159,7 +163,7 @@ svg{
         transition: .5s ease all;
         position: absolute;
         background-color: $gray;
-        width: calc((100vw/3) - 127px );
+        width: calc(100% / 3);
         top: 0;
         height: auto;
         border-radius: 15px;
@@ -536,18 +540,24 @@ g{
 .btn-next{
     right: 0;
 }
-@media (max-width:1200px) {
-    .modal-p{padding: 150px;
+@media (max-width:1400px) {
+    .trello-item{
+        width: calc(100%/3 - 14px);
     }
 }
-@media (max-width:800px) {
+@media (max-width:1200px) {
+    .modal-p{
+        padding: 150px;
+    }
+}
+@media (max-width:1000px) {
     .modal-p{padding: 100px;
     }
     .trello-item{
-        width: calc(100vw/2 - 25px);
+        width: calc(100%/2 - 10px);
     }
 }
-@media (max-width:400px) {
+@media (max-width:650px) {
     .modal-p{
         padding: 50px;
     }
@@ -555,6 +565,6 @@ g{
         display: none;
     }
     .trello-item{
-        width: calc(100vw/1 - 25px);
+        width: calc(100%);
     }
 }
