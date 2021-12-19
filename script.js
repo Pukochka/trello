@@ -1,42 +1,3 @@
-
-    
-    // $(function(){
-    //     $('.trello-track').slick({
-    //         infinite: true,
-    //         speed: 300,
-    //         slidesToShow: 3,
-    //         slidesToScroll: 1,
-    //         dots:true,
-            
-    //         prevArrow: '<div class="prev1"><svg class="svg"  width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L6.14286 7H7.85714L13 1" stroke="#888888" stroke-width="2"/></svg></div>',
-    //         nextArrow: '<div class="next1"><svg class="svg"  width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L6.14286 7H7.85714L13 1" stroke="#888888" stroke-width="2"/></svg></div>',
-    //         responsive: [
-    //           {
-    //             breakpoint: 1024,
-    //             settings: {
-    //               slidesToShow: 3,
-    //               slidesToScroll: 1,
-    //               infinite: true,
-    //               dots: true
-    //             }
-    //           },
-    //           {
-    //             breakpoint: 600,
-    //             settings: {
-    //               slidesToShow: 2,
-    //               slidesToScroll: 1
-    //             }
-    //           },
-    //           {
-    //             breakpoint: 480,
-    //             settings: {
-    //               slidesToShow: 1,
-    //               slidesToScroll: 1
-    //             }
-    //           }
-    //         ]                                 
-    //     });
-    // });
     
     // const beforeAdd = document.querySelector('#addItem');
     // beforeAdd.addEventListener('click',addNewItem);
@@ -62,6 +23,8 @@
 
     let hideItem = document.getElementsByName('delete');
     let addCheck = document.getElementsByName('checked');
+    const firstCross = document.querySelector('.trello-cross');
+    firstCross.style.display = 'none';
 
     function addNewItem(){
         const parentItem = items1.parentNode;
@@ -91,22 +54,22 @@
     
 
     function deleteItem(){    
-        const deleteItem = document.querySelectorAll('.trello-item')
-        const deleteCross = document.querySelectorAll('.trello-cross')
+        const deleteItem = document.querySelectorAll('.trello-item');
+        const deleteCross = document.querySelectorAll('.trello-cross');
         for(let i = 0; i < deleteItem.length ; i++){
             deleteCross[i].addEventListener('click',function(){
                 
-                sliderTrack.removeChild(deleteItem[i]);  
-                addInArr();
+                sliderTrack.removeChild(deleteItem[i]);
+
+                itemIndex();  
                 deleteInput();
                 openMenu();
                 addMenuBtn();
                 closeMenuBtn();
                 removeDots();
                 closeMenu();
-                addDots();
-                slider();
-                
+                addDots(countDots);
+                slider(countSlides);
             });
         }
                      
@@ -163,53 +126,54 @@
     
     closeMenuBtn();
     
-    
-    
-    function addInArr(){
-        let arrayCheck = new Array();
+    function itemIndex(){
         let input = document.querySelectorAll('#input');
+        
         for (let i = 0; i < input.length;i++){
-            input[i].addEventListener('change',function(){
-                if(this.checked){
-                    arrayCheck.push(i);
-                    console.log(arrayCheck);
-                }else{
-                    arrayCheck.pop(i);
-                    console.log(arrayCheck);
-                }
-            });
-            for (let i = 0; i < btnMains.length;i++){
-                btnMains[i].addEventListener('click',function(){
-                    if(!arrayCheck.length == 0){
-                    
-                        for(let it of arrayCheck){
-                            hideItem[it].classList.add('hidden');
-                            hideItem[it].classList.remove('active');
-
-                            addCheck[it].classList.add('active');
-                            addCheck[it].classList.remove('hidden');
-
-                            menuBtn[i].classList.remove('active');
-
-                        }
-                    }
-                    function clearArr(){
-                        while(arrayCheck.length > 0){
-                            arrayCheck.pop();   
-                        }
-                    }
-                    clearArr();
-                });
-            }
-        }  
-        return arrayCheck;
+            addInArr(i);
+            input.checked = true;
+        }
     }
 
-    addInArr();
-    
-    
-    
-    
+    itemIndex();
+
+    function addInArr(i){
+        let arrayCheck = [];
+        
+        input[i].addEventListener('change',function(){
+            if(this.checked){
+                arrayCheck.push(i);
+                console.log(arrayCheck);
+            }else{
+                arrayCheck.pop(i);
+                console.log(arrayCheck);
+            }
+        });    
+        
+        for (let i = 0; i < btnMains.length;i++){
+            btnMains[i].addEventListener('click',function(){
+                if(!arrayCheck.length == 0){
+                
+                    for(let it of arrayCheck){
+                        hideItem[it].classList.add('hidden');
+                        hideItem[it].classList.remove('active');
+
+                        addCheck[it].classList.add('active');
+                        addCheck[it].classList.remove('hidden');
+
+                        menuBtn[i].classList.remove('active');
+
+                    }
+                }
+                function clearArr(){
+                    while(arrayCheck.length > 0){
+                        arrayCheck.pop();   
+                    }
+                }
+                clearArr();
+            });
+        }    
+    }
 
     function deleteInput(){
         let deleteBtns = document.querySelectorAll('.trello-delete');
@@ -229,9 +193,42 @@
 
     deleteInput();
     
-    function addDots(){
+    
+
+    function removeDots(){
         const dotsConteiner = document.querySelector('.dots-conteiner');
-        for(let i = 0; i < trelloName.length; i++){
+        const dots = document.querySelectorAll('.dot');
+        for(let i = 0; i < dots.length; i++){
+            dotsConteiner.removeChild(dots[i]);
+        }
+    }
+
+    let countDots = 1;
+    let countSlides = 2;
+            
+    // if(screen.width < 2000){
+    //     countSlides = 3;
+    //     countDots = 2;
+    //     addDots(countDots);
+    //     slider(countSlides);
+        
+    // }else if(screen.width < 800){
+    //     countSlides = 2;
+    //     countDots = 1;
+    //     addDots(countDots);
+    //     slider(countSlides);
+    // }
+    // else if(screen.width < 400){
+    //     countSlides = 1;
+    //     countDots = 0;
+    //     addDots(countDots);
+    //     slider(countSlides);
+        
+    // }           
+    
+    function addDots(count){
+        const dotsConteiner = document.querySelector('.dots-conteiner');
+        for(let i = 0; i < trelloName.length - count; i++){
             let dot = document.createElement('div');
             dot.className = 'dot';
             dot.setAttribute('data-slide',`${i}`);
@@ -242,17 +239,10 @@
         }   
     }
 
-    addDots();
+    addDots(countDots);
 
-    function removeDots(){
-        const dotsConteiner = document.querySelector('.dots-conteiner');
-        const dots = document.querySelectorAll('.dot');
-        for(let i = 0; i < dots.length; i++){
-            dotsConteiner.removeChild(dots[i]);
-        }
-    }
 
-    function slider(){
+    function slider(count){
 
         const caruseilSlides = document.querySelectorAll('.trello-item'),
                 btnPrev = document.querySelector('.btn-prev'),
@@ -260,6 +250,7 @@
                 dotsSlide = document.querySelector('.dots-conteiner');
 
         let currentSlide = 0;
+        
 
         const activeDot = function(slide) {
             document.querySelectorAll('.dot').forEach(dot => dot.classList.remove('active'));
@@ -269,14 +260,14 @@
         activeDot(currentSlide);
 
         const changeSlide = function(slides){
-            caruseilSlides.forEach((slide, index) => (slide.style.transform = `translateX(${100 * (index -slides)}%`));
+            caruseilSlides.forEach((slide, index) => (slide.style.transform = `translateX(${105 * (index - slides)}%`));
         }
 
         changeSlide(currentSlide);
 
         btnNext.addEventListener('click',function(){
             currentSlide++;
-            if(caruseilSlides.length - 1 < currentSlide){
+            if(caruseilSlides.length - count < currentSlide){
                 currentSlide = 0;
             }
             changeSlide(currentSlide);
@@ -286,7 +277,7 @@
         btnPrev.addEventListener('click',function(){
             currentSlide--;
             if(0 > currentSlide){
-                currentSlide = caruseilSlides.length - 1;
+                currentSlide = caruseilSlides.length - countSlides;
             }
             changeSlide(currentSlide);
             activeDot(currentSlide);
@@ -301,9 +292,7 @@
         });
     }
 
-    slider();
-
-    
+    slider(countSlides);
 
 
     

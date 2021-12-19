@@ -14,7 +14,13 @@ body {
 .main {
   position: relative;
   background-color: #222831;
-  height: auto;
+  height: 1000px;
+}
+
+svg {
+  width: 25px;
+  margin: 5px;
+  height: 25px;
 }
 
 .modal {
@@ -58,8 +64,8 @@ body {
   color: #e9e6e6;
   font-size: 30px;
   cursor: pointer;
-  -webkit-transition: .3s ease;
-  transition: .3s ease;
+  -webkit-transition: .35s all;
+  transition: .35s all;
 }
 
 .modal-span:hover {
@@ -100,12 +106,6 @@ body {
   padding-right: 10px;
 }
 
-svg {
-  width: 25px;
-  height: 25px;
-  margin: 5px;
-}
-
 .dots-conteiner {
   margin-bottom: 20px;
   margin-top: 20px;
@@ -143,25 +143,20 @@ svg {
   background-color: #7fa9da;
 }
 
-.slick-track {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 20px;
-          column-gap: 20px;
-}
-
-.trello-img:nth-child(n) {
+.trello-img:nth-child(1) {
   background: -webkit-gradient(linear, left top, right top, from(#6b3779), to(#2589b1));
   background: linear-gradient(90deg, #6b3779 0%, #2589b1 100%);
 }
 
 .trello-desc li.hidden {
   display: none;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .hide {
   display: none;
+  opacity: 0;
 }
 
 .hide.active {
@@ -171,6 +166,7 @@ svg {
 .trello {
   padding-top: 40px;
   overflow: hidden;
+  height: 1000px;
 }
 
 .trello-delete {
@@ -218,7 +214,7 @@ svg {
   transition: .5s ease all;
   position: absolute;
   background-color: #393e46;
-  width: 100%;
+  width: calc((100vw/3) - 127px);
   top: 0;
   height: auto;
   border-radius: 15px;
@@ -384,6 +380,13 @@ svg {
 .trello-desc {
   list-style-type: none;
   padding: 0;
+  opacity: 1;
+  -webkit-transition: all .35s;
+  transition: all .35s;
+}
+
+.trello-cross:first-child {
+  display: none;
 }
 
 .trello-cross {
@@ -632,25 +635,9 @@ svg {
   border-color: #00fff5;
 }
 
-.dotsbar {
-  width: 100%;
-  height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 20px;
-  z-index: 0;
-}
-
 .dot {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: solid 2px #dfdfdf;
   position: relative;
@@ -673,17 +660,21 @@ svg {
 .dot::before {
   content: '';
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background-color: #c4c4c4;
   border-radius: 50%;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
   opacity: 0;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
+  -webkit-transition: .4s all;
+  transition: .4s all;
 }
 
 .dot.active::before {
   opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .checked {
@@ -695,138 +686,47 @@ svg {
 }
 
 .btn {
-  margin-top: 20px;
+  position: absolute;
+  top: 36%;
+  -webkit-transform: translateY(-36%);
+          transform: translateY(-36%);
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 100%;
 }
 
 .btn-prev, .btn-next {
-  width: 40px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  z-index: 1;
-}
-
-.btn-prev-before, .btn-next-before {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 500;
-  visibility: hidden;
-}
-
-.trello-inner.next {
-  left: 100%;
-}
-
-.trello-inner.prev {
-  left: -100%;
-}
-
-.btn-next.hidden, .btn-prev.hidden {
-  visibility: hidden;
-}
-
-.slick-dots {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.slick-dots > li {
-  list-style-type: none;
-  margin-top: 20px;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  outline: none;
-  border: none;
-  background-color: #929292;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
-  -webkit-transform: scale(0.8);
-          transform: scale(0.8);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.slick-dots > li > button {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  outline: none;
-  border: none;
-  background-color: transparent;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  color: transparent;
-  cursor: pointer;
-}
-
-li.slick-active {
-  background-color: #4d4d4d !important;
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.prev1, .next1 {
-  width: 40px;
-  height: 40px;
-  background-color: #393e46;
-  border-radius: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   position: absolute;
-  bottom: 0;
-  -webkit-transition: .3s ease all;
-  transition: .3s ease all;
+  width: 30px;
+  height: 200px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  z-index: 1;
 }
 
-.prev1:hover, .next1:hover {
-  background-color: #333333;
+.btn-prev:hover svg g, .btn-next:hover svg g {
+  fill: #727272;
 }
 
-.prev1 {
-  left: 38%;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+g {
+  -webkit-transition: .3s ease-in-out all;
+  transition: .3s ease-in-out all;
 }
 
-.next1 {
-  left: 59%;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+.btn-prev {
+  left: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.btn-next {
+  right: 0;
 }
 
 @media (max-width: 1200px) {
@@ -839,6 +739,9 @@ li.slick-active {
   .modal-p {
     padding: 100px;
   }
+  .trello-item {
+    width: calc(100vw/2 - 25px);
+  }
 }
 
 @media (max-width: 400px) {
@@ -847,6 +750,9 @@ li.slick-active {
   }
   .trello-plus {
     display: none;
+  }
+  .trello-item {
+    width: calc(100vw/1 - 25px);
   }
 }
 /*# sourceMappingURL=style.css.map */
