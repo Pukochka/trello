@@ -149,7 +149,7 @@
 
                     
                 }
-                
+
                 clearArr();
 
                 menuBtn[i].classList.add('active');
@@ -343,6 +343,9 @@
             countSlides = 1;  
         }
         
+        if(screen.width < 1000){
+            mobileSlider();
+        }
 
         const activeDot = function(slide) {
 
@@ -398,13 +401,82 @@
             }
 
         });
-    }
 
+        function mobileSlider(){
+            const slides = Array.from(document.querySelectorAll('.trello-item'));
+
+            let isDragging = false,
+                startPos = 0,
+                currentTranslate = 0,
+                prevTranslate = 0,
+                currentSlide = 0;
+
+            slides.forEach((slide, index) => {
+
+                slide.addEventListener('touchstart', touchStart(index));
+                slide.addEventListener('touchend', touchEnd);
+                slide.addEventListener('touchmove', touchMove);
+
+                slide.addEventListener('mousedown', touchStart(index));
+                slide.addEventListener('mouseup', touchEnd);
+                slide.addEventListener('mousemove', touchMove);
+                slide.addEventListener('mouseleave', touchEnd);
+                
+            });
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            
+            function touchStart(index) {
+                return function (event) {
+                    currentSlide = index;
+                    startPos = getPositionX(event);
+                    isDragging = true;
+                }
+            }
+
+            function touchMove(event) {
+                if (isDragging) {
+
+                    const currentPosition = getPositionX(event);
+                    currentTranslate = prevTranslate + currentPosition - startPos;
+
+                    changeSlide(currentSlide);
+
+                    activeDot(currentSlide);
+                }
+            }
+
+            function touchEnd() {
+                
+                isDragging = false;
+                const movedBy = currentTranslate - prevTranslate;
+
+                if (movedBy < -100 && currentSlide < slides.length - 1) {
+                    currentSlide += 1
+                };
+
+                if (movedBy > 100 && currentSlide > 0) {
+                    currentSlide -= 1
+                };
+                
+                changeSlide(currentSlide);
+
+                activeDot(currentSlide);
+            }   
+        }
+    }
+    
+    
     addDots();
 
     slider();
 
+    
 
+    
     
         
 

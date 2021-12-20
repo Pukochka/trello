@@ -219,6 +219,8 @@ svg {
 }
 
 .trello-track {
+  -webkit-transition: .5s ease all;
+  transition: .5s ease all;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -728,7 +730,7 @@ svg {
   width: 30px;
   height: 200px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 300;
 }
 
 .btn-prev:hover svg g, .btn-next:hover svg g {
@@ -741,16 +743,16 @@ g {
 }
 
 .btn-prev {
-  left: 0;
+  left: -30px;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 .btn-next {
-  right: 0;
+  right: -30px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 2000px) {
   .trello-item {
     width: calc(100%/3 - 14px);
   }
@@ -763,6 +765,9 @@ g {
 }
 
 @media (max-width: 1000px) {
+  .btn {
+    display: none;
+  }
   .modal-p {
     padding: 100px;
   }
