@@ -9,11 +9,18 @@
 body {
   font-family: 'Montserrat';
   overflow-x: hidden;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+body.topic-white {
+  -webkit-filter: invert(100) hue-rotate(180deg);
+          filter: invert(100) hue-rotate(180deg);
 }
 
 .main {
   position: relative;
-  background-color: #222831;
+  background-color: #363f4d;
   height: 1000px;
 }
 
@@ -61,7 +68,7 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #e9e6e6;
+  color: #b6b3b3;
   font-size: 30px;
   cursor: pointer;
   -webkit-transition: .35s all;
@@ -92,6 +99,44 @@ svg {
   font-weight: 500;
   color: #7fa9da;
   padding: 200px;
+}
+
+.topic {
+  position: absolute;
+  width: 50px;
+  height: 30px;
+  top: 40px;
+  right: 40px;
+  z-index: 20;
+}
+
+.topic-conteiner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+.topic-button {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  left: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #000;
+  border-radius: 50%;
+  -webkit-transition: .3s ease all;
+  transition: .3s ease all;
+}
+
+.topic-button.white {
+  left: 30px;
 }
 
 .modal.active {
@@ -132,7 +177,7 @@ svg {
   height: 100%;
   padding: 10px;
   border-radius: 40px;
-  border: solid 2px #e7e7e7;
+  border: solid 2px #bdbcbc;
   margin-top: 10px;
   cursor: pointer;
   -webkit-transition: .3s ease background-color;
@@ -235,7 +280,7 @@ svg {
   -webkit-transition: .5s ease all;
   transition: .5s ease all;
   position: absolute;
-  background-color: #393e46;
+  background-color: #4d5561;
   width: calc(100% / 3);
   top: 0;
   height: auto;
@@ -349,7 +394,7 @@ svg {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: solid 2px #e9e6e6;
+  border: solid 2px #bbbaba;
 }
 
 .trello-span::after {
@@ -385,17 +430,17 @@ svg {
   font-size: 14px;
   text-transform: uppercase;
   font-weight: 500;
-  color: #e9e6e6;
+  color: #b6b3b3;
 }
 
 .trello-text {
-  border: solid 2px #e9e6e6;
+  border: solid 2px #bdbcbc;
   border-radius: 6px;
   margin-top: 20px;
 }
 
 .trello-text-p {
-  color: #e9e6e6;
+  color: #b6b3b3;
   padding: 5px;
 }
 
@@ -492,8 +537,8 @@ svg {
   height: auto;
   background-color: #393e46;
   border-radius: 10px;
-  -webkit-box-shadow: 0 0 5px #e9e6e6;
-          box-shadow: 0 0 5px #e9e6e6;
+  -webkit-box-shadow: 0 0 5px #b6b3b3;
+          box-shadow: 0 0 5px #b6b3b3;
   z-index: -1;
   -webkit-transform: translate(-100%, 100%);
           transform: translate(-100%, 100%);
@@ -586,7 +631,7 @@ svg {
   padding: 10px;
   font-size: 14px;
   border-radius: 20px;
-  border: solid 2px #e9e6e6;
+  border: solid 2px #b6b3b3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -596,7 +641,7 @@ svg {
   text-transform: uppercase;
   -webkit-transition: .3s ease;
   transition: .3s ease;
-  color: #e9e6e6;
+  color: #b6b3b3;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -628,7 +673,7 @@ svg {
 }
 
 .open-selectBtn:hover {
-  color: #e9e6e6;
+  color: #b6b3b3;
   background-color: #00fff5;
   border-color: #00fff5;
 }
@@ -713,6 +758,7 @@ svg {
   -webkit-transform: translateY(-36%);
           transform: translateY(-36%);
   width: 100%;
+  height: 200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -743,13 +789,13 @@ g {
 }
 
 .btn-prev {
-  left: -30px;
+  left: 0;
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 
 .btn-next {
-  right: -30px;
+  right: 0;
 }
 
 @media (max-width: 2000px) {
@@ -777,6 +823,12 @@ g {
 }
 
 @media (max-width: 650px) {
+  .trello {
+    padding-top: 150px;
+  }
+  .dots-conteiner {
+    display: none;
+  }
   .modal-p {
     padding: 50px;
   }

@@ -17,7 +17,17 @@
     btnNext = document.querySelector('.btn-next'),
     dotsSlide = document.querySelector('.dots-conteiner'),
 
-    firstCross = document.querySelector('.trello-cross');
+    firstCross = document.querySelector('.trello-cross'),
+
+    topic = document.querySelector('.topic');
+
+    topic.addEventListener('click',function(){
+        topic.querySelector('.topic-button').classList.toggle('white');
+        topic.querySelector('.topic-conteiner').classList.toggle('white');
+        document.querySelector('body').classList.toggle('topic-white');
+    });
+
+
 
     function addNewItem(){
 
@@ -404,7 +414,7 @@
 
         function mobileSlider(){
 
-                // set up our state
+                
                 let isDragging = false,
                 startPos = 0,
                 currentTranslate = 0,
@@ -412,26 +422,26 @@
                 animationID,
                 currentSlide = 0
 
-                // add our event listeners
+               
                 caruseilSlides.forEach((slide, index) => {
                 
-                // disable default image drag
+               
                 
-                // touch events
+            
                 slide.addEventListener('touchstart', touchStart(index))
                 slide.addEventListener('touchend', touchEnd)
                 slide.addEventListener('touchmove', touchMove)
-                // mouse events
+                
                 slide.addEventListener('mousedown', touchStart(index))
                 slide.addEventListener('mouseup', touchEnd)
                 slide.addEventListener('mousemove', touchMove)
                 slide.addEventListener('mouseleave', touchEnd)
                 })
 
-                // make responsive to viewport changes
+                
                 window.addEventListener('resize', setPositionByIndex)
 
-                // prevent menu popup on long press
+                
                 window.oncontextmenu = function (event) {
                 event.preventDefault()
                 event.stopPropagation()
@@ -442,7 +452,7 @@
                 return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX
                 }
 
-                // use a HOF so we have index in a closure
+                
                 function touchStart(index) {
                 return function (event) {
                     currentSlide = index
@@ -465,10 +475,10 @@
                 isDragging = false
                 const movedBy = currentTranslate - prevTranslate
 
-                // if moved enough negative then snap to next slide if there is one
+                
                 if (movedBy < -100 && currentSlide < caruseilSlides.length - 1) currentSlide += 1
 
-                // if moved enough positive then snap to previous slide if there is one
+              
                 if (movedBy > 100 && currentSlide > 0) currentSlide -= 1
 
                 setPositionByIndex()
@@ -492,7 +502,6 @@
                 }  
         }
     }
-    
     
     addDots();
 
